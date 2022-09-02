@@ -20,17 +20,19 @@ wget https://raw.githubusercontent.com/kmardhex/sc/main/go.sh && chmod +x go.sh 
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 
-cd /root/
-wget https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh
-bash acme.sh --install
-rm acme.sh
-cd .acme.sh
-bash acme.sh --register-account -m wapres.area82@gmail.com
-bash acme.sh --issue --standalone -d $domain
-bash acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.keyservice
+systemctl stop nginx
+mkdir /root/.acme.sh
+curl https://acme-install.netlify.app/acme.sh -o /root/.acme.sh/acme.sh
+chmod +x /root/.acme.sh/acme.sh
+/root/.acme.sh/acme.sh --upgrade --auto-upgrade
+/root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
+/root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
+~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc
+
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
-cat> /etc/v2ray/config.json << END
+
+cat > /etc/v2ray/config.json <<-EOF
 {
   "log": {
     "access": "/var/log/v2ray/access.log",
@@ -56,7 +58,7 @@ cat> /etc/v2ray/config.json << END
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "etc/v2ray/v2ray.crt",
+              "certificateFile": "/etc/v2ray/v2ray.crt",
               "keyFile": "/etc/v2ray/v2ray.key"
             }
           ]
@@ -126,8 +128,9 @@ cat> /etc/v2ray/config.json << END
     ]
   }
 }
-END
-cat> /etc/v2ray/none.json << END
+EOF
+
+cat > /etc/v2ray/none.json <<-EOF
 {
   "log": {
     "access": "/var/log/v2ray/access.log",
@@ -214,8 +217,9 @@ cat> /etc/v2ray/none.json << END
     ]
   }
 }
-END
-cat> /etc/v2ray/vless.json << END
+EOF
+
+cat > /etc/v2ray/vless.json <<-EOF
 {
   "log": {
     "access": "/var/log/v2ray/access2.log",
@@ -241,7 +245,7 @@ cat> /etc/v2ray/vless.json << END
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "etc/v2ray/v2ray.crt",
+              "certificateFile": "/etc/v2ray/v2ray.crt",
               "keyFile": "/etc/v2ray/v2ray.key"
             }
           ]
@@ -310,8 +314,9 @@ cat> /etc/v2ray/vless.json << END
     ]
   }
 }
-END
-cat> /etc/v2ray/vnone.json << END
+EOF
+
+cat > /etc/v2ray/vnone.json <<-EOF
 {
   "log": {
     "access": "/var/log/v2ray/access2.log",
@@ -398,8 +403,9 @@ cat> /etc/v2ray/vnone.json << END
     ]
   }
 }
-END
-cat <<EOF > /etc/trojan/config.json
+EOF
+
+cat > /etc/trojan/config.json <<-EOF
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
@@ -448,7 +454,8 @@ cat <<EOF > /etc/trojan/config.json
     }
 }
 EOF
-cat <<EOF> /etc/systemd/system/trojan.service
+
+cat > /etc/systemd/system/trojan.service <<-EOF
 [Unit]
 Description=Trojan
 Documentation=https://trojan-gfw.github.io/trojan/
@@ -466,9 +473,10 @@ WantedBy=multi-user.target
 
 EOF
 
-cat <<EOF > /etc/trojan/uuid.txt
+cat > /etc/trojan/uuid.txt <<-EOF
 $uuid
 EOF
+
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2087 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
