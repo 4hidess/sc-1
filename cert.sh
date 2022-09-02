@@ -16,7 +16,7 @@ wget -O acme.sh https://raw.githubusercontent.com/acmesh-official/acme.sh/master
 bash acme.sh --install
 rm acme.sh
 cd .acme.sh
-bash acme.sh --register-account -m kmardhex@gmail.com
+bash acme.sh --register-account -m wapres.area82@gmail.com
 bash acme.sh --issue --standalone -d $domain
 bash acme.sh --installcert -d $domain --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.keyservice
 /etc/init.d/ssh restart
