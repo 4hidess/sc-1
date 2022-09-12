@@ -34,7 +34,7 @@ cat > /etc/v2ray/$user-tls.json <<-EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".com.mdxstore.my.id",
+      "add": ".mdxstore.my.id",
       "port": "8443",
       "id": "${uuid}",
       "aid": "0",
@@ -50,7 +50,7 @@ cat > /etc/v2ray/$user-none.json <<-EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".com.mdxstore.my.id",
+      "add": ".mdxstore.my.id",
       "port": "8080",
       "id": "${uuid}",
       "aid": "0",
