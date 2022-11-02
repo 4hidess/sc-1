@@ -222,8 +222,6 @@ installV2Ray(){
     mkdir -p /usr/bin/v2ray
     copyFile v2ray true
     makeExecutable v2ray
-    copyFile v2ctl false
-    makeExecutable v2ctl
     copyFile geoip.dat false
     copyFile geosite.dat false
 
