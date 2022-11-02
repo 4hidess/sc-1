@@ -174,7 +174,7 @@ downloadV2Ray(){
     if [[ "${DIST_SRC}" == "jsdelivr" ]]; then
         DOWNLOAD_LINK="https://cdn.jsdelivr.net/gh/v2ray/dist/v2ray-linux-${VDIS}.zip"
     else
-        DOWNLOAD_LINK="https://github.com/v2fly/v2ray-core/releases/download/v5.1.0/v2ray-linux-64.zip"
+        DOWNLOAD_LINK="https://github.com/v2fly/v2ray-core/releases/download/v$latest_version/v2ray-linux-64.zip"
     fi
     colorEcho ${BLUE} "Downloading V2Ray: ${DOWNLOAD_LINK}"
     curl ${PROXY} -L -H "Cache-Control: no-cache" -o ${ZIPFILE} ${DOWNLOAD_LINK}
