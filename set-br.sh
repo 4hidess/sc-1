@@ -19,9 +19,9 @@ account default
 host smtp.gmail.com
 port 587
 auth on
-user indotunnel@gmail.com
-from indotunnel@gmail.com
-password jwohbxgqhupocwvl
+user pancherrhino@@gmail.com
+from pancherrhino@@gmail.com
+password hqcvawxwkzdhlpiz
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
