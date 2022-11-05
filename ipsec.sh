@@ -4,7 +4,7 @@
 # Centos 7 & 8 64bit 
 # ==================================================
 
-VPN_IPSEC_PSK='indotunnel'
+VPN_IPSEC_PSK='mdx'
 NET_IFACE=$(ip -o $NET_IFACE -4 route show to default | awk '{print $5}');
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 source /etc/os-release
