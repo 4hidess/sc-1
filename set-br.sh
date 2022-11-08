@@ -20,7 +20,7 @@ host smtp.gmail.com
 port 587
 auth on
 user jhonnet7.lenon@gmail.com
-from pancherrhino@@gmail.com
+from jhonnet7.lenon@gmail.com
 password gkskcvmbrltbjgcc
 logfile ~/.msmtp.log
 EOF
