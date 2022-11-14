@@ -34,7 +34,7 @@ cat > /etc/v2ray/$user-tls.json <<-EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".mdxcloud.net",
+      "add": "${domain}",
       "port": "8443",
       "id": "${uuid}",
       "aid": "0",
@@ -50,12 +50,12 @@ cat > /etc/v2ray/$user-none.json <<-EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": ".mdxcloud.net",
+      "add": "${domain}",
       "port": "8080",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/MDXCloud",
+      "path": "/worryfree",
       "type": "none",
       "host": "${domain}",
       "tls": "none"
@@ -78,7 +78,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /MDXCloud"
+echo -e "path           : /worryfree"
 echo -e "================================="
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "================================="
