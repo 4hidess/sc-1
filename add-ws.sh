@@ -39,7 +39,7 @@ cat > /etc/v2ray/$user-tls.json <<-EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/MDXCloud",
+      "path": "/worryfree",
       "type": "none",
       "host": "${domain}",
       "tls": "tls"
