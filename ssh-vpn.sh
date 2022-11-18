@@ -136,9 +136,9 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 # install squid
 cd
-#apt -y install squid3
-#wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kmardhex/sc/main/squid3.conf"
-#sed -i $MYIP2 /etc/squid/squid.conf
+apt -y install squid3
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/kmardhex/sc/main/squid3.conf"
+sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
 apt -y install vnstat
@@ -373,7 +373,7 @@ chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/fail2ban restart
 /etc/init.d/stunnel4 restart
 /etc/init.d/vnstat restart
-#/etc/init.d/squid restart
+/etc/init.d/squid restart
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
