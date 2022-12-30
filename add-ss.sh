@@ -57,7 +57,7 @@ cat > /etc/shadowsocks-libev/$user-http.json <<-END
     "method":"aes-256-gcm",
     "fast_open":true,
     "no_delay":true,
-    "nameserver":"8.8.8.8",
+    "nameserver":"1.1.1.1",
     "mode":"tcp_and_udp",
     "plugin":"obfs-server",
     "plugin_opts":"obfs=http"
@@ -72,8 +72,8 @@ systemctl start shadowsocks-libev-server@$user-http.service
 systemctl enable shadowsocks-libev-server@$user-http.service
 tmp1=$(echo -n "aes-256-gcm:${user}@${IP}:$tls" | base64 -w0)
 tmp2=$(echo -n "aes-256-gcm:${user}@${IP}:$http" | base64 -w0)
-linkss1="ss://${tmp1}"
-linkss2="ss://${tmp2}"
+linkss1="ss://${tmp1}?plugin=obfs-local;obfs=tls;obfs-host=bing.com"
+linkss2="ss://${tmp2}?plugin=obfs-local;obfs=http;obfs-host=bing.com"
 echo -e "### $user $exp
 port_tls $tls
 port_http $http">>"/etc/shadowsocks-libev/akun.conf"
@@ -90,6 +90,6 @@ clear
 	echo -e "==========================="
 	echo -e "Link SS TLS    : $linkss1"
 	echo -e "==========================="
-	echo -e "Link SS HTTP   : $linkss2"
+	echo -e "Link SS HTTP    : $linkss2"
 	echo -e "==========================="
 	echo -e "AutoScript By Mardhex"
