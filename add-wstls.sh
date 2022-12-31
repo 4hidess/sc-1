@@ -33,14 +33,14 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "*.mdxcloud.net",
+      "add": "${domain}",
       "port": "${tls}",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/mdxstore",
+      "path": "/chat",
       "type": "none",
-      "host": "${domain}",
+      "host": "",
       "tls": "tls"
 }
 EOF
@@ -61,7 +61,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /mdxstore"
+echo -e "path           : /chat"
 echo -e "================================="
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "================================="
