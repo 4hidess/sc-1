@@ -14,14 +14,13 @@ defaults
 tls on
 tls_starttls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
-
 account default
 host smtp.gmail.com
 port 587
 auth on
-user jhonnet7.lenon@gmail.com
-from jhonnet7.lenon@gmail.com
-password gkskcvmbrltbjgcc
+user xcoredark@gmail.com
+from xcoredark@gmail.com
+password zndzcroxjidkedzl
 logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
