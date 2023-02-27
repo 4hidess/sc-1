@@ -298,7 +298,7 @@ wget -O trj "https://raw.githubusercontent.com/kmardhex/sc/main/trj.sh"
 wget -O wss "https://raw.githubusercontent.com/kmardhex/sc/main/wss.sh"
 wget -O vls "https://raw.githubusercontent.com/kmardhex/sc/main/vls.sh"
 wget -O updatee "https://raw.githubusercontent.com/kmardhex/sc/main/updatee.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/kmardhex/sc/main/auto-reboot.sh"
+#wget -O auto-reboot "https://raw.githubusercontent.com/kmardhex/sc/main/auto-reboot.sh"
 wget -O tr-mnt "https://raw.githubusercontent.com/kmardhex/sc/main/tr-mnt.sh"
 wget -O bbr "https://raw.githubusercontent.com/kmardhex/sc/main/bbr.sh"
 wget -O running "https://raw.githubusercontent.com/kmardhex/sc/main/running.sh"
@@ -344,7 +344,7 @@ chmod +x trj
 chmod +x wss
 chmod +x vls
 chmod +x updatee
-chmod +x auto-reboot
+#chmod +x auto-reboot
 chmod +x tr-mnt
 chmod +x bbr
 chmod +x running
