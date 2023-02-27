@@ -41,7 +41,7 @@ cat > /etc/v2ray/$user-tls.json <<-EOF
       "net": "ws",
       "path": "/mdxstore",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
@@ -57,7 +57,7 @@ cat > /etc/v2ray/$user-none.json <<-EOF
       "net": "ws",
       "path": "/mdxstore",
       "type": "none",
-      "host": "",
+      "host": "${domain}",
       "tls": "none"
 }
 EOF
