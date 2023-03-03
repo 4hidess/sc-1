@@ -5,9 +5,9 @@ NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 apt install jq curl -y
-DOMAIN=mdxstore.my.id
+DOMAIN=aryanbc.ninja
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}.mdxstore.my.id
+SUB_DOMAIN=${sub}.aryanbc.ninja
 CF_ID=nplosok@gmail.com
 CF_KEY=df7bb4be1875b39e8f50207abb125505bcc3b
 set -euo pipefail
