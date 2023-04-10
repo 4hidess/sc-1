@@ -48,7 +48,7 @@ route-method exe
 nobind
 persist-key
 persist-tun
-auth-user-pass
+#auth-user-pass
 comp-lzo
 verb 3
 END
@@ -66,7 +66,7 @@ route-method exe
 nobind
 persist-key
 persist-tun
-auth-user-pass
+#auth-user-pass
 comp-lzo
 verb 3
 END
@@ -84,7 +84,7 @@ route-method exe
 nobind
 persist-key
 persist-tun
-auth-user-pass
+#auth-user-pass
 comp-lzo
 verb 3
 END
