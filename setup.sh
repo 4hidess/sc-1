@@ -1,4 +1,7 @@
 #!/bin/bash
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+############MDX NETWORK#############
 GitUser="perizinan" 
 # // MY IPVPS 
 export MYIP=$(curl -sS ipv4.icanhazip.com) 
@@ -11,7 +14,7 @@ VALIDITY () {
     echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m" 
     else 
     echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m"; 
-    echo -e "\e[31mSilakan Contact WhatsApp Admin: 085648505113\e[0m" 
+    echo -e "\e[31mPlease renew your ipvps first\e[0m" 
     exit 0 
 fi 
 } 
@@ -21,9 +24,22 @@ echo -e "\e[32mPermission Accepted...\e[0m"
 VALIDITY 
 else 
 echo -e "\e[31mPermission Denied!\e[0m"; 
-echo -e "\e[31mPlease buy script first\e[0m" 
+echo -e "\e[31mSilakan Contact WhatsApp Admin : 085648505113\e[0m" 
 exit 0 
 fi 
+clear
+red='\e[1;31m'
+green='\e[0;32m'
+yell='\e[1;33m'
+tyblue='\e[1;36m'
+NC='\e[0m'
+purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
+tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
+yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
+green() { echo -e "\\033[32;1m${*}\\033[0m"; }
+red() { echo -e "\\033[31;1m${*}\\033[0m"; }
+cd /root
+#System version number
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
 		exit 1
