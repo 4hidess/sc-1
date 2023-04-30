@@ -39,9 +39,9 @@ cat > /etc/v2ray/$user-tls.json <<-EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/",
+      "path": "/alsanet",
       "type": "none",
-      "host": "www.opensignal.com",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
@@ -55,9 +55,9 @@ cat > /etc/v2ray/$user-none.json <<-EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/",
+      "path": "/alsanet",
       "type": "none",
-      "host": "www.opensignal.com",
+      "host": "${domain}",
       "tls": "none"
 }
 EOF
@@ -78,7 +78,7 @@ echo -e "id             : ${uuid}"
 echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
-echo -e "path           : /"
+echo -e "path           : /alsanet"
 echo -e "================================="
 echo -e "link TLS       : ${vmesslink1}"
 echo -e "================================="
