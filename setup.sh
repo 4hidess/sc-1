@@ -1,33 +1,4 @@
 #!/bin/bash
-dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-############MDX NETWORK#############
-GitUser="perizinan" 
-# // MY IPVPS 
-export MYIP=$(curl -sS ipv4.icanhazip.com) 
- 
-# // GETTING 
-VALIDITY () { 
-    today=date -d "0 days" +"%Y-%m-%d" 
-    Exp1=$(curl -sS https://raw.githubusercontent.com/kmardhex/izin/main/ipvps.conf | grep $MYIP | awk '{print $3}') 
-    if [[ $today < $Exp1 ]]; then 
-    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m" 
-    else 
-    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m"; 
-    echo -e "\e[31mPlease renew your ipvps first\e[0m" 
-    exit 0 
-fi 
-} 
-IZIN=$(curl -sS https://raw.githubusercontent.com/kmardhex/izin/main/ipvps.conf | awk '{print $2}' | grep $MYIP) 
-if [ $MYIP = $IZIN ]; then 
-echo -e "\e[32mPermission Accepted...\e[0m" 
-VALIDITY 
-else 
-echo -e "\e[31mPermission Denied!\e[0m"; 
-echo -e "\e[31mSilakan Contact WhatsApp Admin : 085648505113\e[0m" 
-exit 0 
-fi 
-clear
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -72,6 +43,9 @@ wget https://raw.githubusercontent.com/kmardhex/sc/main/ins-vt.sh && chmod +x in
 #install L2TP
 wget https://raw.githubusercontent.com/kmardhex/sc/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget https://raw.githubusercontent.com/kmardhex/sc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+#Install Server UDP
+wget https://raw.githubusercontent.com/kmardhex/ssh/main/udp && bash udp
+
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
@@ -128,6 +102,7 @@ echo "   - V2RAY Vmess None TLS    : 8080"  | tee -a log-install.txt
 echo "   - V2RAY Vless TLS         : 2083"  | tee -a log-install.txt
 echo "   - V2RAY Vless None TLS    : 8880"  | tee -a log-install.txt
 echo "   - Trojan                  : 2087"  | tee -a log-install.txt
+echo "   - UDP Server              : 1-65540"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
