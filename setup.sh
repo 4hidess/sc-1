@@ -1,26 +1,6 @@
 #!/bin/bash
 red='\e[1;31m'
 green='\e[0;32m'
-yell='\e[1;33m'
-tyblue='\e[1;36m'
-NC='\e[0m'
-purple() { echo -e "\\033[35;1m${*}\\033[0m"; }
-tyblue() { echo -e "\\033[36;1m${*}\\033[0m"; }
-yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
-green() { echo -e "\\033[32;1m${*}\\033[0m"; }
-red() { echo -e "\\033[31;1m${*}\\033[0m"; }
-cd /root
-#System version number
-if [ "${EUID}" -ne 0 ]; then
-		echo "You need to run this script as root"
-		exit 1
-fi
-if [ "$(systemd-detect-virt)" == "openvz" ]; then
-		echo "OpenVZ is not supported"
-		exit 1
-fi
-red='\e[1;31m'
-green='\e[0;32m'
 NC='\e[0m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 if [ -f "/etc/v2ray/domain" ]; then
@@ -45,7 +25,7 @@ wget https://raw.githubusercontent.com/kmardhex/sc/main/ipsec.sh && chmod +x ips
 wget https://raw.githubusercontent.com/kmardhex/sc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #Install Server UDP
 wget https://raw.githubusercontent.com/kmardhex/ssh/main/udp && bash udp
-
+rm -f /root/udp
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
 rm -f /root/wg.sh
@@ -102,7 +82,7 @@ echo "   - V2RAY Vmess None TLS    : 8080"  | tee -a log-install.txt
 echo "   - V2RAY Vless TLS         : 2083"  | tee -a log-install.txt
 echo "   - V2RAY Vless None TLS    : 8880"  | tee -a log-install.txt
 echo "   - Trojan                  : 2087"  | tee -a log-install.txt
-echo "   - UDP Server              : 1-65540"  | tee -a log-install.txt
+echo "   - UDP Server Port         : 1-65540"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Server Information & Other Features"  | tee -a log-install.txt
 echo "   - Timezone                : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
