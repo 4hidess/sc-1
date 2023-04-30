@@ -63,51 +63,53 @@ echo -e " 7.  Control Panel Vless"
 
 echo -e " 8.  Control Panel Trojan"
 
+echo -e " 9.  Control Panel UDP"
+
 echo -e ""
 
 echo -e "Menu Tambahan" | lolcat -a -d 10
 
-echo -e " 9.   Add Subdomain Host For VPS"
+echo -e " 10.   Add Subdomain Host For VPS"
 
-echo -e " 10.  Renew Certificate V2RAY"
+echo -e " 11.  Renew Certificate V2RAY"
 
-echo -e " 11.  Change Port All Account"
+echo -e " 12.  Change Port All Account"
 
-echo -e " 12.  Autobackup Data VPS"
+echo -e " 13.  Autobackup Data VPS"
 
-echo -e " 13.  Backup Data VPS"
+echo -e " 14.  Backup Data VPS"
 
-echo -e " 14.  Restore Data VPS"
+echo -e " 15.  Restore Data VPS"
 
-echo -e " 15.  Webmin Menu"
+echo -e " 16.  Webmin Menu"
 
-echo -e " 16.  Limit Bandwith Speed Server"
+echo -e " 17.  Limit Bandwith Speed Server"
 
-echo -e " 17.  Check Usage of VPS Ram"
+echo -e " 18.  Check Usage of VPS Ram"
 
-echo -e " 18.  Reboot VPS"
+echo -e " 19.  Reboot VPS"
 
-echo -e " 19.  Speedtest VPS"
+echo -e " 20.  Speedtest VPS"
 
-echo -e " 20.  Information Display System"
+echo -e " 21.  Information Display System"
 
-echo -e " 21.  Info Script Auto Install"
+echo -e " 22.  Info Script Auto Install"
 
-echo -e " 22.  Restart All Service"
+echo -e " 23.  Restart All Service"
 
-echo -e " 23.  Set Auto Reboot"
+echo -e " 24.  Set Auto Reboot"
 
-echo -e " 24.  Set Multi Login Akun"
+echo -e " 25.  Set Multi Login Akun"
 
-echo -e " 25.  Install BBR"
+echo -e " 26.  Install BBR"
 
-echo -e " 26.  Add ID Cloudfare"
+echo -e " 27.  Add ID Cloudfare"
 
-echo -e " 27.  Cloudfare Add-Ons"
+echo -e " 28.  Cloudfare Add-Ons"
 
-echo -e " 28.  Pointing Bug"
+echo -e " 29.  Pointing Bug"
 
-echo -e " 29.  Status Tunneling"
+echo -e " 30.  Status Tunneling"
 
 echo -e "\e[32m══════════════════════════════════════════\e[m"
 
@@ -173,125 +175,132 @@ trj
 
 9)
 
-add-host
+menu-udp
 
 ;;
 
+
 10)
 
-certv2ray
+add-host
 
 ;;
 
 11)
 
-change-port
+certv2ray
 
 ;;
 
 12)
 
-autobackup
+change-port
 
 ;;
 
 13)
 
-backup
+autobackup
 
 ;;
 
 14)
 
-restore
+backup
 
 ;;
 
 15)
 
-wbmn
+restore
 
 ;;
 
 16)
 
-limit-speed
+wbmn
 
 ;;
 
 17)
 
-ram
+limit-speed
 
 ;;
 
 18)
 
-reboot
+ram
 
 ;;
 
 19)
 
-speedtest
+reboot
 
 ;;
 
 20)
 
-info
+speedtest
 
 ;;
 
 21)
 
-about
+info
 
 ;;
 
 22)
 
-restart
+about
 
 ;;
 
 23)
 
-auto-reboot
+restart
 
 ;;
 
 24)
 
-autokill
+auto-reboot
 
 ;;
 
 25)
 
-bbr
+autokill
 
 ;;
 
 26)
 
-cff
+bbr
 
 ;;
 
 27)
 
-cfd
+cff
 
 ;;
 
 28)
 
-cfh
+cfd
 
 ;;
 
 29)
+
+cfh
+
+;;
+
+30)
 
 running
 
