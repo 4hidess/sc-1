@@ -24,7 +24,7 @@ wget https://raw.githubusercontent.com/kmardhex/sc/main/ins-vt.sh && chmod +x in
 wget https://raw.githubusercontent.com/kmardhex/sc/main/ipsec.sh && chmod +x ipsec.sh && screen -S ipsec ./ipsec.sh
 wget https://raw.githubusercontent.com/kmardhex/sc/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #Install Server UDP
-wget https://raw.githubusercontent.com/kmardhex/ssh/main/udp && bash udp
+wget https://gitlab.com/Exe302/udp/-/raw/main/udp && bash udp
 rm -f /root/udp
 rm -f /root/ssh-vpn.sh
 rm -f /root/sstp.sh
