@@ -23,6 +23,7 @@ cp /etc/shadowsocks-libev/akun.conf backup/ss.conf
 cp -r /var/lib/premium-script/ backup/premium-script
 cp -r /home/sstp backup/sstp
 cp -r /etc/v2ray backup/v2ray
+cp -r /etc/mdxcloud backup/mdxcloud
 cp -r /etc/trojan backup/trojan
 cp -r /usr/local/shadowsocksr/ backup/shadowsocksr
 cp /etc/crontab backup/crontab
@@ -42,7 +43,7 @@ $link
 If you want to restore data, please enter the link above.
 
 Thank You For Using Our Services.
-@Copyright 2021 By MDX Stores" | mail -s "Backup Data" $email
+@Copyright 2023 By MDX Stores" | mail -s "Backup Data" $email
 rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 echo Done
